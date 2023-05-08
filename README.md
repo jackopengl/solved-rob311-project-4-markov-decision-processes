@@ -1,0 +1,17 @@
+Download Link: https://assignmentchef.com/product/solved-rob311-project-4-markov-decision-processes
+<br>
+Part 1: Markov Decision Processes via Value IterationValue iteration is a well known method for solving Markov decision problems (processes). This iterative technique relies on what is known as the ‘Bellman update’ (see original work by Bellman in 1957), which you will code up as part of the project. Your tasks are to:
+
+1.   Write a short function, get_transition_model(), that generates the state transition model (matrix) for the simple cleaning robot problem described by Figure 1. This transition model will be needed to solve an instance of the cleaning robot MDP (see next bullet).
+
+2.   Implement the value iteration algorithm given in AIMA on pg. 653, which accepts an MDP description as input (states, possible actions, transition matrix, rewards, discount factor) and produces an epsilonoptimal policy (and a utility function). The function, value_iteration(), will also accept a threshold (ϵ) and a maximum number of iterations to run.
+
+You will submit the completed template files part1_1.py and part1_2.py through Autolab. We will test your code on several problems, including on the grid world example given in AIMA on pg. 646! We have included an environment file (mdp_grid_env.py) in the handout package that defines the variables which are required for the AIMA problem. The function init_stochstic_model() (i.e., the function that generates the transition model) has deliberately not been implemented, so as not to give away all the test cases. After implementing this function, you should be able to test your solution on more complex problem instances, as done in Autolab. Thus, you have the option to create additional tests for the grid environment using the provided test files—this should help with debugging, etc.
+
+Figure 1: A simple cleaning robot problem. There are six states; the robot wants to put rubbish in the bin (State 5) and to recharge its batteries (State 0). Both of these states are terminal states (i.e., once reached, the robot does not leave the state). The robot may choose to move left or right to an adjacent cell. Due to environment uncertainties, such as a slippery floor, for example, state transitions are not deterministic: when trying to move in a certain direction, the robot succeeds with a probability of 0.8; with a probability of 0.15 it remains in the same state, and with a probability of 0.05 it may move in the opposite direction. The reward in State 0 is 1, in State 5 is 5, and is zero otherwise.
+
+Part 2: Markov Decision Processes via Policy IterationAs discussed in the lectures, value iteration is not the only way to solve an MDP; another popular alternative is policy iteration. The policy iteration framework is different than that of value iteration: we begin with an initial, sub-optimal policy (possibly random), and then refine that policy. Your task is to:
+
+1. Implement the policy iteration algorithm given in AIMA on pg. 657, which accepts an MDP description as input (states, possible actions, transition matrix, rewards, discount factor) and produces an optimal policy
+
+(and a utility function). The function, policy_iteration(), will also accept a variable that specifies the maximum number of iterations to run.
